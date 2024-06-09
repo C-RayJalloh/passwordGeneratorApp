@@ -1,5 +1,5 @@
-import { View, Text, SafeAreaView } from 'react-native'
-import React from 'react'
+import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
+import React, { useState } from 'react'
 import * as Yup from 'yup'
 
 // form validation with Yup package
@@ -12,6 +12,9 @@ const PasswordSchema = Yup.object().shape({
 
 
 function App() {
+  const [password, setPassword] = useState('')
+
+
   return (
     <SafeAreaView>
       <View>
@@ -20,5 +23,9 @@ function App() {
     </SafeAreaView>
     )
 }
+
+const styles = StyleSheet.create({
+
+})
 
 export default App
