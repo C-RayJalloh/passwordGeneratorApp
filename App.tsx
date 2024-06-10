@@ -19,8 +19,8 @@ function App() {
 
  const [lowerCase, setLowerCase] = useState(false)
  const [upperCase, setUpperCase] = useState(false)
- const [numbers, useNumbers] = useState(false)
- const [symbols, useSymbols] = useState(false)
+ const [numbers, setNumbers] = useState(false)
+ const [symbols, setSymbols] = useState(false)
 
 
  // LOGIC
@@ -40,6 +40,12 @@ function App() {
 
  const resetPasswordState = () => {
    //
+   setPassword('')
+   setLowerCase(false)
+   setUpperCase(false)
+   setNumbers(false)
+   setSymbols(false)
+   setIsPassGenerated(false)
  }
 
   
