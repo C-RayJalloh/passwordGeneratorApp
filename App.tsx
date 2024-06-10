@@ -12,8 +12,35 @@ const PasswordSchema = Yup.object().shape({
 
 
 function App() {
+  // useState Hook - updating the UI by it state
   const [password, setPassword] = useState('')
- const [isPassGenerated, setPassGenerated] = useState(false)
+ const [isPassGenerated, setIsPassGenerated] = useState(false)
+
+
+ const [lowerCase, setLowerCase] = useState(false)
+ const [upperCase, setUpperCase] = useState(false)
+ const [numbers, useNumbers] = useState(false)
+ const [symbols, useSymbols] = useState(false)
+
+
+ // LOGIC
+ const generatedPasswordString = (passwordLength: number) => {
+   // 
+ }
+
+ const createPassword = (characters: string, passwordLength: number) => {
+   // 
+   let result = ''
+   for ( let i = 0; i < passwordLength; i++) {
+    const characterIndex = Math.round(Math.random() * characters.length)
+    result += characters[characterIndex]
+   }
+   return result
+ }
+
+ const resetPasswordState = () => {
+   //
+ }
 
   
 
