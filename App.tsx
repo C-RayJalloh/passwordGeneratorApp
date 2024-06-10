@@ -20,7 +20,7 @@ function App() {
   const [numbers, setNumbers] = useState(false);
   const [symbols, setSymbols] = useState(false);
 
-  const generatedPasswordString = (passwordLength: number) => {
+  const generatePasswordString = (passwordLength: number) => {
     let characterList = '';
 
     const upperCaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -76,7 +76,8 @@ function App() {
             initialValues={{ passwordLength: '' }}
             validationSchema={PasswordSchema}
             onSubmit={(values) => {
-              generatedPasswordString(+values.passwordLength);
+              console.log(values)
+              generatePasswordString(+values.passwordLength);
             }}
           >
             {({
@@ -161,11 +162,12 @@ function App() {
             )}
           </Formik>
         </View>
+
         {isPassGenerated && (
           <View style={[styles.card, styles.cardElevated]}>
             <Text style={styles.subTitle}>Password:</Text>
             <Text style={styles.description}>Long Press to copy</Text>
-            <Text selectable style={styles.generatedPassword}>{password}</Text>
+            <Text selectable={true} style={styles.generatedPassword}>{password}</Text>
           </View>
         )}
       </SafeAreaView>
